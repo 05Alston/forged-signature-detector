@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+
+<section id="main-content" class="d-flex justify-content-center align-items-center">
+    <div>
+
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
+        
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='content/scanSign.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Singature Forgery</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="{{ url_for('forgery') }}" class="btn btn-primary">Upload Image</a>
+                    </div>
+                  </div>
+
+
+        
+            </div>
+        
+            <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+        
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='content/scanDoc.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Signature Detection and Forgery</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="{{ url_for('detection') }}" class="btn btn-primary">Upload Document</a>
+                    </div>
+                  </div>
+        
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
