@@ -1,11 +1,20 @@
+body {
+    background-color: #F6F1F1;
+}
 .image-section{
     display: flex;
     justify-content: space-evenly;
     gap: 6em;
 }
 
+.navbar{
+    background-color: #000000;
+    color: #19A7CE !important;
+}
 .navbar-brand{
     font-size: 2rem !important;
+    color: #19A7CE !important;
+
 }
 
 .img-preview1,
@@ -34,9 +43,10 @@ input[type="file"] {
 }
 
 .upload-label{
+    border-radius: 8px;
     display: inline-block;
     padding: 12px 30px;
-    background: #39D2B4;
+    background: #146C94;
     color: #fff;
     font-size: 1em;
     transition: all .4s;
@@ -46,7 +56,7 @@ input[type="file"] {
 
 .upload-label:hover{
     background: #34495E;
-    color: #39D2B4;
+    color: #ffffff;
 }
 
 .loader {

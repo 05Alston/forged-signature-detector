@@ -16,7 +16,7 @@ import cv2
 from keras import backend as K
 
 
-model = models.load_model('./siamese.h5', compile = False)
+model = models.load_model('../siamese.h5', compile = False)
 def check_forgery(path_img_1, path_img_2):
     img1 = cv2.imread(path_img_1, cv2.IMREAD_GRAYSCALE)
     img2 = cv2.imread(path_img_2, cv2.IMREAD_GRAYSCALE)
