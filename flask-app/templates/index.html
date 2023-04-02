@@ -1,79 +1,45 @@
 {% extends "base.html" %} {% block content %}
 
-<section id="main-content" class="d-flex justify-content-center align-items-center">
-    <div>
-    <div class="row d-flex justify-content-center align-items-center">
-        <form method = >
-        <div class="col-12 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
-    
-            <div class="card-body card-div" data-aos="fade-up" data-aos-delay="100">
 
-                <figure class="card-figure">
-                    <img src="{{ url_for('static', filename='content/scanSign.jpg') }}" class="card-img" alt="">
-                </figure>
-            
-                <div class="row pt-2">
-                    <div class="col-6 d-flex align-items-center">
-                        <h4 class="card-heading mb-0">
-                            Singature Forgery
-                        </h4>
-                    </div>
-            
-                </div>
-            
-                <p class="card-info">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                </p>
-            
-                <div class="col-12 d-flex justify-content-center align-items-center">
-                    <button id="upload-btn" aria-label="upload button" type="submit" class="upload-btn d-flex justify-content-center align-items-center">
-                        Upload Image
-                        &nbsp;
-                        <span class="iconify" data-icon="ri:send-plane-fill" data-width="20" data-height="20"></span>
-                    </button>
-                    </div>
-
-            </div>
-    
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data" style="display: flex; justify-content: space-around;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="display: block;">Reference Image</h2>
+        <label for="imageUpload1" class="upload-label" style="text-align: center;">
+            Choose...
+        </label>
+        <input type="file" name="file1" id="imageUpload1" accept=".png, .jpg, .jpeg">
         </div>
-    
-        <div class="col-12 col-lg-6 col-md-6 col-sm-12">
-    
-            <div class="card-body card-div" data-aos="fade-up" data-aos-delay="100">
-
-                <figure class="card-figure">
-                    <img src="{{ url_for('static', filename='content/scanDoc.jpg') }}" class="card-img" alt="">
-                </figure>
-            
-                <div class="row pt-2">
-                    <div class="col-6 d-flex align-items-center">
-                        <h4 class="card-heading mb-0">
-                            Signature Detection and Forgery
-                        </h4>
-                    </div>
-            
-                </div>
-            
-                <p class="card-info">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                </p>
-                
-            
-                <div class="col-12 d-flex justify-content-center align-items-center">
-                    <button id="upload-btn" aria-label="upload button" type="submit" class="upload-btn d-flex justify-content-center align-items-center">
-                        Upload Document
-                        &nbsp;
-                        <span class="iconify" data-icon="ri:send-plane-fill" data-width="20" data-height="20"></span>
-                    </button>
-                    </div>
-            </div>
-
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2>Target Image</h2>
+        <label for="imageUpload2" class="upload-label" style="text-align: center;">
+            Choose...
+        </label>
+        <input type="file" name="file2" id="imageUpload2" accept=".png, .jpg, .jpeg">
         </div>
     </form>
+
+    <div class="image-section">
+        <div class="img-preview1">
+            <div id="imagePreview1">
+            </div>
+        </div>
+        <div class="img-preview2" >
+            <div id="imagePreview2">
+            </div>
+        </div>
+    </div>
+    
+    <div class="row d-flex justify-content-center mt-4">
+        <button type="button" class="btn btn-primary btn-lg "  id="btn-predict">Check!</button>
     </div>
 
-    </div>
+    <div class="loader" style="display:none;"></div>
 
-</section>
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
 
 {% endblock %}
