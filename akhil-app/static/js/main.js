@@ -40,6 +40,7 @@ $(document).ready(function () {
         }
     });
     $("#imageUpload2").change(function () {
+        console.log('shit')
         $('.image-preview2').show();
         // $('#btn-predict').show();
         $('#result').text('');

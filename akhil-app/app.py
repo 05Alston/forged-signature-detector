@@ -29,9 +29,9 @@ def check_forgery(path_img_1, path_img_2):
     img2 = img2.reshape((1, 155, 220, 1))
     print('hello')
     if model.predict((img1, img2))[0][0] <= 1.5:
-        return True
+        return "True"
     else:
-        return False
+        return "False"
 # config = ConfigProto()
 # config.gpu_options.per_process_gpu_memory_fraction = 0.2
 # config.gpu_options.allow_growth = True
@@ -71,7 +71,7 @@ def upload():
         f2.save(file2_path)
 
         # Make prediction
-        preds = check_forgery(f1, f2)
+        preds = check_forgery(file1_path, file2_path)
         return preds
     return None
 
