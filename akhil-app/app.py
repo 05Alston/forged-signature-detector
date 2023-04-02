@@ -16,7 +16,7 @@ import cv2
 from keras import backend as K
 
 
-model = models.load_model('siamese.h5', compile = False)
+model = models.load_model('./siamese.h5', compile = False)
 def check_forgery(path_img_1, path_img_2):
     img1 = cv2.imread(path_img_1, cv2.IMREAD_GRAYSCALE)
     img2 = cv2.imread(path_img_2, cv2.IMREAD_GRAYSCALE)
@@ -29,9 +29,9 @@ def check_forgery(path_img_1, path_img_2):
     img2 = img2.reshape((1, 155, 220, 1))
     print('hello')
     if model.predict((img1, img2))[0][0] <= 1.5:
-        return "True"
+        return "The Signature is likely to be Genuine"
     else:
-        return "False"
+        return "The Signature is likely to be Forged"
 # config = ConfigProto()
 # config.gpu_options.per_process_gpu_memory_fraction = 0.2
 # config.gpu_options.allow_growth = True
